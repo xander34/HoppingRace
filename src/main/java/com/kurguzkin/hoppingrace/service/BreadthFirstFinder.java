@@ -32,6 +32,13 @@ public class BreadthFirstFinder {
         return "No solution";
     }
 
+    /**
+     * Gets through possible situations using Breadth First graph traversal approach. Memoization used to
+     * avoid cycles.
+     * @param testCase test case game data
+     * @param maxSpeed limit of hopper speed
+     * @return -1 if finish is unreachable, best number of hops otherwise
+     */
     public static int getHopsNumber(TestCase testCase, int maxSpeed) {
 
         Deque<Situation> situations = new LinkedList<>();
@@ -51,12 +58,12 @@ public class BreadthFirstFinder {
             if (testCase.isObstacle(situation.x, situation.y)) continue; // inside obstacle
             if (memory.contains(situation.key())) continue; // been there
 
-            // finished!
+            // final base case - race finished!
             if (situation.x == testCase.finishX && situation.y == testCase.finishY) {
                 return situation.nHop;
             }
 
-            // iterate next nodes
+            // iterate and add next nodes
 
             for (int dx = -1; dx <= 1; dx++) {
                 for (int dy = -1; dy <= 1; dy++) {

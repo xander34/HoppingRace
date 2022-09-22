@@ -10,12 +10,17 @@ public class GameConditions {
         N_CASES, SIZE, START_FINISH, N_OBSTACLES, OBSTACLE
     }
 
-    final public List<TestCase> testCases;
+    public final List<TestCase> testCases;
 
     public GameConditions(List<TestCase> testCases) {
         this.testCases = new ArrayList<>(testCases);
     }
 
+    /**
+     * Reads input line by line creating test cases
+     * @param inputString input string
+     * @return GameConditions object, containing list of test cases
+     */
     public static GameConditions readFromString(String inputString) {
         int nCases = 0, caseIndex = 0;
         int sizeX = 0, sizeY = 0, startX = 0, startY = 0, finishX = 0, finishY = 0;
