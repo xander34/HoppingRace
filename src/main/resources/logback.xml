@@ -1,0 +1,17 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{HH:mm:ss} %-5level %logger{25} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.kurguzkin.hoppingrace.Main" level="INFO"/>
+    <logger name="com.kurguzkin.hoppingrace.service.BreadthFirstFinder" level="TRACE"/>
+    <logger name="com.kurguzkin.hoppingrace.service.BreadthFirstFinderTest" level="TRACE"/>
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>
